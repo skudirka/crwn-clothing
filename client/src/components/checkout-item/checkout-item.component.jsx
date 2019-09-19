@@ -3,24 +3,32 @@ import {connect} from 'react-redux';
 
 import {addItem, removeItem, clearItemFromCart} from '../../redux/cart/cart.actions';
 
-import './checkout-item.styles.scss';
+import {
+    CheckoutItemContainer,
+    ImageContainer,
+    LabelContainer,
+    QuantityContainer,
+    ValueContainer,
+    ButtonContainer,
+    RemoveButtonContainer
+} from './checkout-item.styles';
 
 const CheckoutItem = ({ cartItem, clearItem, addItem, removeItem }) => {
     const {name, imageUrl, price, quantity} = cartItem; 
     return (
-        <div className="checkout-item">
-            <div className="image-container">
+        <CheckoutItemContainer className="checkout-item">
+            <ImageContainer className="image-container">
                 <img src={imageUrl} alt="item" />
-            </div>
-            <span className="name">{name}</span>
-            <span className="quantity">
-                <div className="arrow" onClick={() => removeItem(cartItem)}>&#10094;</div>
-                <span className="value">{quantity}</span>
-                <div className="arrow" onClick={() => addItem(cartItem)}>&#10095;</div>
-            </span>
-            <span className="price">${price}</span>
-            <div className="remove-button" onClick={() => clearItem(cartItem)}>&#10005;</div>
-        </div>
+            </ImageContainer>
+            <LabelContainer className="name">{name}</LabelContainer>
+            <QuantityContainer className="quantity">
+                <ButtonContainer className="arrow" onClick={() => removeItem(cartItem)}>&#10094;</ButtonContainer>
+                <ValueContainer className="value">{quantity}</ValueContainer>
+                <ButtonContainer className="arrow" onClick={() => addItem(cartItem)}>&#10095;</ButtonContainer>
+            </QuantityContainer>
+            <LabelContainer className="price">${price}</LabelContainer>
+            <RemoveButtonContainer className="remove-button" onClick={() => clearItem(cartItem)}>&#10005;</RemoveButtonContainer>
+        </CheckoutItemContainer>
     )
 };
 

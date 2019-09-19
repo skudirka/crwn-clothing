@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
 
-import './sign-in.styles.scss';
+import {SignInContainer, SignInTitleContainer, SignInButtonsContainer} from './sign-in.styles';
 
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
@@ -33,19 +33,19 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
     };
         
     return (
-        <div className="sign-in">
-            <h2>I already have an account</h2>
+        <SignInContainer className="sign-in">
+            <SignInTitleContainer>I already have an account</SignInTitleContainer>
             <span>Sign in with your email and password.</span>
             <form onSubmit={handleSubmit}>
                 <FormInput name="email" label="email" type="email" value={email} handleChange={handleChange} required />
                 <FormInput name="password" label="password" type="password" value={password} handleChange={handleChange} required />
 
-                <div className="buttons">
+                <SignInButtonsContainer className="buttons">
                     <CustomButton type="submit">Sign In</CustomButton>
                     <CustomButton type="button" onClick={googleSignInStart} isGoogleSignIn>Sign In with Google</CustomButton>
-                </div>
+                </SignInButtonsContainer>
             </form>
-        </div>
+        </SignInContainer>
     )
 }
 
