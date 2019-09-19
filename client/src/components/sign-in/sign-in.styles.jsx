@@ -1,9 +1,15 @@
 import styled from 'styled-components';
 
 export const SignInContainer = styled.div`
-    width: 380px;
     display: flex;
     flex-direction: column;
+    width: 50%;
+    max-width: 380px;
+
+    @media screen and (max-width: 800px) {
+        width: 100%;
+        max-width: 100%;
+    }
 `;
 
 export const SignInTitleContainer = styled.h2`
@@ -12,5 +18,12 @@ export const SignInTitleContainer = styled.h2`
 
 export const SignInButtonsContainer = styled.div`
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
+
+    @media screen and (max-width: 800px) {
+        button {
+            max-width: 50%;
+            min-width: 50%;
+        }
+    }
 `;

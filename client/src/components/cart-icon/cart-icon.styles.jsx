@@ -9,6 +9,10 @@ export const CartIconContainer = styled.div`
     align-items: center;
     justify-content: center;
     cursor: pointer;
+
+    @media screen and (max-width: 800px) {
+        width: 35px;
+    }
 `;
 
 export const ShoppingIcon = styled(BagIcon)`
