@@ -22,4 +22,4 @@ const mapToStateProps = createStructuredSelector({
     collections: selectCollectionsForPreview
 });
 
-export default connect(mapToStateProps)(CollectionsOverview);
+export default connect(mapToStateProps)(React.memo(CollectionsOverview));

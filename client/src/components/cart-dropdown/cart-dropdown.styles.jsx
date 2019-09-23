@@ -5,7 +5,7 @@ export const CartDropdownContainer = styled.div`
     position: absolute;
     width: 240px;
     height: 340px;
-    display: flex;
+    display: none;
     flex-direction: column;
     padding: 20px;
     border: 1px solid black;
@@ -13,6 +13,10 @@ export const CartDropdownContainer = styled.div`
     top: 90px;
     right: 40px;
     z-index: 5;
+
+    &.open {
+        display: flex;
+    }
 `;
 
 export const EmptyMessageContainer = styled.span`

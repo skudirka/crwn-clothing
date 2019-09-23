@@ -8,12 +8,11 @@ import {HeaderContainer, LogoContainer, OptionsContainer, OptionLink} from './he
 import {ReactComponent as Logo} from '../../assets/crown.svg';
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
-import {selectCartHidden} from '../../redux/cart/cart.selectors';
 import {selectCurrentUser} from '../../redux/user/user.selector';
 
 import {signOutStart} from '../../redux/user/user.actions';
 
-const Header = ({currentUser, hidden, signOutStart}) => (
+const Header = ({currentUser, signOutStart}) => (
     <HeaderContainer>
         <LogoContainer to="/">
             <Logo className="logo" />
@@ -29,15 +28,12 @@ const Header = ({currentUser, hidden, signOutStart}) => (
             }
             <CartIcon />
         </OptionsContainer>
-        {
-            hidden ? null : <CartDropdown />
-        }
+        <CartDropdown />
     </HeaderContainer>
 );
 
 const mapStateToProps = state => createStructuredSelector({
-    currentUser: selectCurrentUser,
-    hidden: selectCartHidden
+    currentUser: selectCurrentUser
 });
 
 const mapDispatchToProps = dispatch => ({
