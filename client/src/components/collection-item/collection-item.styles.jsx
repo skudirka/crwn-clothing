@@ -53,6 +53,7 @@ export const AddButton = styled(CustomButton)`
         padding: 0 10px;
     }
 `;
+AddButton.displayName = 'AddButton';
 
 export const CollectionFooterContainer = styled.div`
     width: 100%;

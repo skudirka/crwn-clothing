@@ -18,11 +18,13 @@ export const CartDropdownContainer = styled.div`
         display: flex;
     }
 `;
+CartDropdownContainer.displayName = 'CartDropdownContainer';
 
 export const EmptyMessageContainer = styled.span`
     font-size: 18px;
     margin: 50px auto;
 `;
+EmptyMessageContainer.displayName = 'EmptyMessageContainer';
 
 export const CartItemsContainer = styled.div`
     height: 240px;
@@ -34,3 +36,4 @@ export const CartItemsContainer = styled.div`
 export const CheckoutButton = styled(CustomButton)`
     margin-top: auto;
 `;
+CheckoutButton.displayName = 'CheckoutButton';

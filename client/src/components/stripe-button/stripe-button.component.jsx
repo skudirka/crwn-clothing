@@ -17,7 +17,6 @@ const StripeCheckoutButton = ({price}) => {
         }).then(response => {
             alert('Payment Successful');
         }).catch(error => {
-            console.log('Payment error: ', JSON.parse(error));
             alert('There was an issue with your payment. Please be sure you use the provided credit card.');
         });
     }
@@ -34,6 +33,7 @@ const StripeCheckoutButton = ({price}) => {
             panelLabel="Pay Now" 
             token={onToken} 
             stripeKey={publishableKey}
+            className="stripe"
         />
     )
 };

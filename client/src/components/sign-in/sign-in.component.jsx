@@ -8,7 +8,7 @@ import CustomButton from '../custom-button/custom-button.component';
 
 import {googleSignInStart, emailSignInStart} from '../../redux/user/user.actions';
 
-const SignIn = ({ emailSignInStart, googleSignInStart }) => {
+export const SignIn = ({ emailSignInStart, googleSignInStart }) => {
     const [userCredentials, setCredentials] = useState({
         email: '',
         password: ''
@@ -19,7 +19,6 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
     const handleSubmit = async e => {
         e.preventDefault();
         
-        console.log('email: ', email, 'password: ', password);
         emailSignInStart(email, password);
     };
 

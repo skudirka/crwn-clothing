@@ -1,4 +1,4 @@
-const INITAL_STATE = {
+export const INITIAL_STATE = {
     sections: [
         {
           title: 'hats',
@@ -35,7 +35,7 @@ const INITAL_STATE = {
     ]
 };
 
-const directoryReducer = (state = INITAL_STATE, action) => {
+const directoryReducer = (state = INITIAL_STATE, action) => {
     switch( action.type ){
         default :
             return state;

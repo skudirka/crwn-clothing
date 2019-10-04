@@ -8,7 +8,7 @@ import CustomButton from '../custom-button/custom-button.component';
 
 import {signUpStart} from '../../redux/user/user.actions';
 
-const SignUp = ({signUpStart}) => {
+export const SignUp = ({signUpStart}) => {
     const [userCredentials, setCredentials] = useState({
         displayName: '',
         email: '',

@@ -12,7 +12,7 @@ import {selectCurrentUser} from '../../redux/user/user.selector';
 
 import {signOutStart} from '../../redux/user/user.actions';
 
-const Header = ({currentUser, signOutStart}) => (
+export const Header = ({currentUser, signOutStart}) => (
     <HeaderContainer>
         <LogoContainer to="/">
             <Logo className="logo" />
@@ -22,9 +22,9 @@ const Header = ({currentUser, signOutStart}) => (
             <OptionLink to="/shop">CONTACT</OptionLink>
             {
                 currentUser ? 
-                    <OptionLink as="div" onClick={signOutStart}>SIGN OUT</OptionLink>
+                    <OptionLink as="div" className="sign-out" onClick={signOutStart}>SIGN OUT</OptionLink>
                 : 
-                <OptionLink to="/signin">SIGN IN</OptionLink>
+                <OptionLink to="/signin" className="sign-in">SIGN IN</OptionLink>
             }
             <CartIcon />
         </OptionsContainer>

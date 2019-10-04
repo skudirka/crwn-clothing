@@ -14,7 +14,7 @@ import {
     CheckoutButton
 } from './cart-dropdown.styles';
 
-const CartDropdown = ({cartItems, hidden, history, dispatch}) => {
+export const CartDropdown = ({cartItems, hidden, history, dispatch}) => {
     const openClass = hidden ? '' : 'open';
     return (
     <CartDropdownContainer className={`cart-dropdown ${openClass}`}>

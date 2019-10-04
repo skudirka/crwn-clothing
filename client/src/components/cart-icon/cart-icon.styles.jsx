@@ -14,6 +14,7 @@ export const CartIconContainer = styled.div`
         width: 35px;
     }
 `;
+CartIconContainer.displayName = 'CartIconContainer';
 
 export const ShoppingIcon = styled(BagIcon)`
     width: 24px;
@@ -26,3 +27,4 @@ export const ItemCountContainer = styled.span`
     font-weight: bold;
     bottom: 12px;
 `;
+ItemCountContainer.displayName = 'ItemCountContainer';
